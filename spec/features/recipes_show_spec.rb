@@ -13,6 +13,7 @@ RSpec.describe "recipes show" do
         @recipe_2.ingredients << [@ingredient_2, @ingredient_3]
     end
 
+    # User Story 2
     describe "when I visit show page" do
        it "displays the recipe's name, complexity, genre, and ingredient names" do
         
