@@ -36,6 +36,7 @@ RSpec.describe "recipes show" do
 
             total_cost = @ingredient_2.cost + @ingredient_3.cost
             expect(page).to have_content(@recipe_2.name)
+            save_and_open_page
             expect(page).to have_content("Total Cost: #{total_cost}")
        end
     end
