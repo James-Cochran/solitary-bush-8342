@@ -14,7 +14,7 @@ RSpec.describe "recipes show" do
     end
 
     # User Story 2
-    describe "when I visit show page" do
+    describe "when I visit recipies show page I see a recipies ingredients" do
        it "displays the recipe's name, complexity, genre, and ingredient names" do
         
             visit "/recipes/#{@recipe_2.id}"
@@ -25,6 +25,17 @@ RSpec.describe "recipes show" do
 
             expect(page).to have_content(@ingredient_2.name)
             expect(page).to_not have_content(@ingredient_1.name)
+       end
+    end
+
+    # User Story 3
+    describe "when I visit recipies show page I see a recipies total cost" do
+        it "displays the total cost of all the ingredients" do
+
+            visit "/recipes/#{@recipe_2.id}"
+
+            expect(page).to have_content(@recipe_2.name)
+            expect(page).to have_content("Total_Cost: 9")
        end
     end
 end
