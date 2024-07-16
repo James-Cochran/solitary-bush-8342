@@ -34,8 +34,9 @@ RSpec.describe "recipes show" do
 
             visit "/recipes/#{@recipe_2.id}"
 
+            total_cost = @ingredient_2.cost + @ingredient_3.cost
             expect(page).to have_content(@recipe_2.name)
-            expect(page).to have_content("Total_Cost: 9")
+            expect(page).to have_content("Total Cost: #{total_cost}")
        end
     end
 end
